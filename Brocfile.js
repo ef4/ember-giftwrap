@@ -2,11 +2,17 @@
 var stew = require('broccoli-stew');
 var merge  = require('broccoli-merge-trees');
 var concat = require('broccoli-sourcemap-concat');
-var StubAddon = require('./src/stub-addon');
+var StubApp = require('./src/stub-app');
+var EmptyTree = require('./src/empty-tree');
 
-var app = new StubAddon({
+var app = new StubApp({
   name: 'giftwrap',
-  tests: false
+  tests: false,
+  trees: {
+    app: new EmptyTree(),
+    styles: new EmptyTree(),
+    templates: new EmptyTree()
+  }
 });
 
 var internal = stew.mv('lib', 'giftwrap');
