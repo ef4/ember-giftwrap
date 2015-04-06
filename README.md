@@ -14,12 +14,12 @@ into any Ember app, no matter how it was built.
 
 # How?
 
-1. Create a new ember-cli app. It's just a placeholder for installing
-   the addons you want to package.
+1. Create a new ember-cli app. It will serve as a place to install the
+   addons that you intend to package.
 
 2. Install whatever addons you want, using `ember install:addon`.
 
-3. Also install this addon with `ember install:addon ember-giftwrap`.
+3. Install this addon with `ember install:addon ember-giftwrap`.
 
 4. Run `ember giftwrap`. You should end up with one JS file, one CSS
    file, and a sourcemap file, all in the `wrapped` subdir.
@@ -44,9 +44,9 @@ We create a global object named `GiftWrap`. It has these methods & properties:
    inside the addons bundle. For example, `var LiquidFire = GiftWrap.require('liquid-fire');`.
 
  - `define()`: gives you access to the AMD defining function used
-   inside the addons bundle. This would let you pass modules to the
-   addons. You probably don't need this -- we automatically make the
-   `Ember` global available to them their `require`.
+   inside the addons bundle. This lets you pass modules to the
+   addons. (We automatically `define('ember', ...)` for them as long
+   as `window.Ember` exists).
 
  - `env`: an object that you can use to pass configuration to addons
    that are expecting to find it in `config/environment.js`.
