@@ -7,9 +7,10 @@ function StubApp(options) {
 StubApp.prototype = Object.create(EmberApp.prototype);
 StubApp.prototype.constructor = StubApp;
 
-// We don't want any of the default legacy files. But we *do* want to
-// let addons stick their own imports into the legacyFilesToAppend
-// list.
+// We don't want any of the default legacy files. But we *do* still
+// want to let addons stick their own imports into the
+// legacyFilesToAppend list.
 StubApp.prototype.populateLegacyFiles = function() {};
+
 
 module.exports = StubApp;

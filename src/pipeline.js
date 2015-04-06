@@ -26,12 +26,12 @@ var js = concat(merge([app.appAndDependencies(), internal]), {
     .concat(app.legacyFilesToAppend)
     .concat(['vendor/addons.js']),
   inputFiles: ['giftwrap/**/*.js'],
-  outputFile: 'giftwrapped-addons.js',
+  outputFile: 'addons.js',
   footer: "window.GiftWrap = require('giftwrap-internal/container-injector');})();",
   description: 'Concat: giftwrap js'
 });
 
 var styles = stew.find(app.styles(), 'assets/vendor.css');
-styles = stew.rename(styles, 'assets/vendor.css', 'giftwrapped-addons.css');
+styles = stew.rename(styles, 'assets/vendor.css', 'addons.css');
 
 module.exports = merge([styles, js]);

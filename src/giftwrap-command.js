@@ -17,6 +17,7 @@ module.exports = {
   run: function(options) {
     var ui = this.ui;
     ui.startProgress(chalk.green('Building'), chalk.green('.'));
+
     var builder = new Builder({
       ui: ui,
       outputPath: options.outputPath,
@@ -29,7 +30,7 @@ module.exports = {
       ui.stopProgress();
       return builder.cleanup();
     }).then(function() {
-      ui.writeLine(chalk.green("Yay"));
+      ui.writeLine(chalk.green("Successfully packaged your addons in ./wrapped"));
     }).catch(function(err) {
         ui.writeLine(chalk.red('Build failed.'));
         ui.writeError(err);
