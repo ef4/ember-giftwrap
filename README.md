@@ -64,7 +64,7 @@ We create a global object named `GiftWrap`. It has these methods & properties:
    content directly into index.html.
 
  - `ember giftwrap` always packages *all* the addons that are
-   installed, there's not currently a way to be more picky.
+   installed, there's not currently a way to be more picky. Default ember apps include addons you may not need (ember-cli-ic-ajax, ember-data, etc), so you'll want to remove them from your `package.json` if that's the case.
 
  - preprocessor addons that blow up if they don't find the files or
    directories they're looking for can be problematic for us, since we
