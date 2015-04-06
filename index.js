@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'giftwrap',
+  name: 'ember-giftwrap',
   includedCommands: function() {
     return {
       giftwrap: require('./src/giftwrap-command.js')
