@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="giftwrapped-addons.css">
+  </head>
+  <script src="jquery.js"></script>  
+  <script src="ember.debug.js"></script>
+  <script src="ember-template-compiler.js"></script>
+  <script src="giftwrapped-addons.js"></script>
+  <body>
+    <script type="text/javascript">
+      var App = Ember.Application.create();
+      GiftWrap.install(App);
+    </script>
+    
+    <script type="text/x-handlebars">
+      {{#liquid-if foo}}
+      Hello world
+      {{else}}
+      Other
+      {{/liquid-if}}
+    </script>
+  </body>
+</html>
