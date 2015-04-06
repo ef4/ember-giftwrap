@@ -17,16 +17,20 @@ into any Ember app, no matter how it was built.
 1. Create a new ember-cli app. It will serve as a place to install the
    addons that you intend to package.
 
-2. Install whatever addons you want, using `ember install:addon`.
+2. Install the *exact* same Ember version you intend to use in your
+   application. This ensures that any templates inside the addons will
+   get compiled with the right compiler.
 
-3. Install this addon with `ember install:addon ember-giftwrap`.
+3. Install whatever addons you want, using `ember install:addon`.
 
-4. Run `ember giftwrap`. You should end up with one JS file, one CSS
+4. Install this addon with `ember install:addon ember-giftwrap`.
+
+5. Run `ember giftwrap`. You should end up with one JS file, one CSS
    file, and a sourcemap file, all in the `wrapped` subdir.
 
-5. Add the script and stylesheet to your Ember app.
+6. Add the script and stylesheet to your Ember app.
 
-6. Right after instantiating your app, activate the addons like this:
+7. Right after instantiating your app, activate the addons like this:
 
 ```js
 App = Ember.Application.create();
