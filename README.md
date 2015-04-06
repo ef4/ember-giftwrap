@@ -1,25 +1,16 @@
-# Giftwrap
+# [WIP] Ember Giftwrap
 
-This README outlines the details of collaborating on this Ember addon.
+This is a work-in-progress. It's not ready yet.
 
-## Installation
+# Why?
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+The Ember addons ecosystem is one of the best things about Ember. But
+users stuck on legacy build systems have a hard time taking advantage
+of it.
 
-## Running
+This tool is intended to be able to take *any* set of Ember addons and
+package them in a standalone JS file that can be injected directly
+into any Ember app, no matter how it was built.
 
-* `ember server`
-* Visit your app at http://localhost:4200.
 
-## Running Tests
 
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
