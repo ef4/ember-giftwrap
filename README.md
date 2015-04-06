@@ -21,7 +21,10 @@ into any Ember app, no matter how it was built.
    application. This ensures that any templates inside the addons will
    get compiled with the right compiler.
 
-3. Install whatever addons you want, using `ember install:addon`.
+3. Install whatever addons you want, using `ember
+   install:addon`. Remember that ember-cli will only recognize addons
+   if they are both present in `node_modules` *and* listed in your
+   `package.json`.
 
 4. Install this addon with `ember install:addon ember-giftwrap`.
 
@@ -54,3 +57,15 @@ We create a global object named `GiftWrap`. It has these methods & properties:
 
  - `env`: an object that you can use to pass configuration to addons
    that are expecting to find it in `config/environment.js`.
+
+# Known Caveats
+
+ - there is no automatic support for addons that attempt to inject
+   content directly into index.html.
+
+ - `ember giftwrap` always packages *all* the addons that are
+   installed, there's not currently a way to be more picky.
+
+ - preprocessor addons that blow up if they don't find the files or
+   directories they're looking for can be problematic for us, since we
+   aren't actually building a real app.
