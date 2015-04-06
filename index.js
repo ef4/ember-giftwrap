@@ -2,5 +2,10 @@
 'use strict';
 
 module.exports = {
-  name: 'giftwrap'
+  name: 'giftwrap',
+  includedCommands: function() {
+    return {
+      giftwrap: require('./src/giftwrap-command.js')
+    };
+  }
 };
