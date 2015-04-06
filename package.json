@@ -1,7 +1,7 @@
 {
-  "name": "giftwrap",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "name": "ember-giftwrap",
+  "version": "0.0.1",
+  "description": "Packages Ember addons for use outside ember-cli.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/ef4/ember-giftwrap",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Edward Faulkner <ef@alum.mit.edu>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -26,6 +26,7 @@
     "ember-cli": "ef4/ember-cli#refactor",
     "ember-cli-htmlbars": "0.7.4",
     "ember-cli-uglify": "1.0.1",
+    "liquid-fire": "0.19.1",
     "quick-temp": "^0.1.2"
   },
   "keywords": [
