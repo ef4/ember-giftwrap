@@ -1,4 +1,5 @@
 /* jshint node: true */
+var path = require('path');
 var stew = require('broccoli-stew');
 var merge  = require('broccoli-merge-trees');
 var concat = require('broccoli-sourcemap-concat');
@@ -16,7 +17,7 @@ var app = new StubApp({
   }
 });
 
-var internal = stew.mv('lib', 'giftwrap');
+var internal = stew.mv(path.join(__dirname, '..', 'lib'), 'giftwrap');
 
 var js = concat(merge([app.appAndDependencies(), internal]), {
   header: '(function(){',
