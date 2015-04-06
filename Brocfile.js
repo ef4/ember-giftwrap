@@ -1,21 +1,29 @@
 /* jshint node: true */
-/* global require, module */
+var stew = require('broccoli-stew');
+var merge  = require('broccoli-merge-trees');
+var concat = require('broccoli-sourcemap-concat');
+var StubAddon = require('./src/stub-addon');
 
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+var app = new StubAddon({
+  name: 'giftwrap',
+  tests: false
+});
 
-var app = new EmberAddon();
+var internal = stew.mv('lib', 'giftwrap');
 
-// Use `app.import` to add additional libraries to the generated
-// output files.
-//
-// If you need to use different assets in different
-// environments, specify an object as the first parameter. That
-// object's keys should be the environment name and the values
-// should be the asset to use in that environment.
-//
-// If the library that you are including contains AMD or ES6
-// modules that you would like to import into your application
-// please specify an object with the list of modules as keys
-// along with the exports of each module as its value.
+var js = concat(merge([app.appAndDependencies(), internal]), {
+  header: '(function(){',
+  headerFiles: [
+    app.bowerDirectory + '/loader.js/loader.js']
+    .concat(app.legacyFilesToAppend)
+    .concat(['vendor/addons.js']),
+  inputFiles: ['giftwrap/**/*.js'],
+  outputFile: 'giftwrapped-addons.js',
+  footer: "window.GiftWrap = require('giftwrap-internal/container-injector');})();",
+  description: 'Concat: giftwrap js'
+});
 
-module.exports = app.toTree();
+var styles = stew.find(app.styles(), 'assets/vendor.css');
+styles = stew.rename(styles, 'assets/vendor.css', 'giftwrapped-addons.css');
+
+module.exports = merge([styles, js, 'tests/dummy/public']);
