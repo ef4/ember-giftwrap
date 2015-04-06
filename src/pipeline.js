@@ -11,7 +11,10 @@ var app = new StubApp({
   tests: false,
   trees: {
     app: new EmptyTree(),
-    styles: new EmptyTree(),
+    // I'm creating these empty files because badly behaved
+    // preprocessors explode if they aren't present, even though we
+    // aren't going to use them.
+    styles: new EmptyTree(['app.css', 'app.scss']),
     templates: new EmptyTree(),
     public: new EmptyTree()
   }
