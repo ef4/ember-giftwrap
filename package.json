@@ -1,6 +1,6 @@
 {
   "name": "ember-giftwrap",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Packages Ember addons for use outside ember-cli.",
   "directories": {
     "doc": "doc",
