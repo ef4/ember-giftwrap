@@ -3,6 +3,7 @@ var path = require('path');
 var stew = require('broccoli-stew');
 var merge  = require('broccoli-merge-trees');
 var concat = require('broccoli-sourcemap-concat');
+var derequire = require('broccoli-derequire');
 var StubApp = require('./stub-app');
 var EmptyTree = require('./empty-tree');
 
@@ -37,4 +38,4 @@ var js = concat(merge([app.appAndDependencies(), internal]), {
 var styles = stew.find(app.styles(), 'assets/vendor.css');
 styles = stew.rename(styles, 'assets/vendor.css', 'addons.css');
 
-module.exports = merge([styles, js]);
+module.exports = derequire(merge([styles, js]));
