@@ -26,7 +26,7 @@
     "ember-addon"
   ],
   "dependencies": {
-    "ember-cli": "ef4/ember-cli#refactor",
+    "ember-cli-fork": "ef4/ember-cli#refactor",
     "ember-cli-babel": "^4.0.0",
     "broccoli-derequire": "^0.1.0",
     "broccoli-merge-trees": "^0.2.1",
