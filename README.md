@@ -22,11 +22,11 @@ into any Ember app, no matter how it was built.
    get compiled with the right compiler.
 
 3. Install whatever addons you want, using `ember
-   install:addon`. Remember that ember-cli will only recognize addons
+   install`. Remember that ember-cli will only recognize addons
    if they are both present in `node_modules` *and* listed in your
    `package.json`.
 
-4. Install this addon with `ember install:addon ember-giftwrap`.
+4. Install this addon with `ember install ember-giftwrap`.
 
 5. Run `ember giftwrap`. You should end up with one JS file, one CSS
    file, and a sourcemap file, all in the `wrapped` subdir.
