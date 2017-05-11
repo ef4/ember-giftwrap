@@ -5,7 +5,7 @@ This is a work-in-progress. It's alpha quality. Feedback appreciated.
 # Why?
 
 The Ember addons ecosystem is one of the best things about Ember. But
-users stuck on legacy build systems have a hard time taking advantage
+users of non ember-cli build systems have a hard time taking advantage
 of it.
 
 This tool is intended to be able to take *any* set of Ember addons and
